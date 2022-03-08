@@ -1,4 +1,7 @@
 node {
+  parameters {
+    booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
+  }
   stages{
     stage("build"){
       steps{
