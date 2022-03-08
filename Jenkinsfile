@@ -1,4 +1,5 @@
-node {
+pipeline  {
+  agent any
   parameters {
     booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
   }
