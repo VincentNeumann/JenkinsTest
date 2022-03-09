@@ -3,6 +3,9 @@ pipeline  {
   parameters {
     booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
   }
+
+  tools {nodejs "nodejs"}
+
   stages{
     stage("build"){
       steps{
