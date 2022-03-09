@@ -4,13 +4,12 @@ pipeline  {
     booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
   }
 
-  tools {nodejs "nodejs"}
 
   stages{
     stage("build"){
       steps{
         sh("pwd")
-        sh("npm install")
+        sh("docker run --name node -p 3000:3000")
         sh("npx cypress run")
         echo "build is completed"
       }
