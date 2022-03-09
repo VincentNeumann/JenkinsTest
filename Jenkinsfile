@@ -25,7 +25,4 @@ pipeline  {
       }
     }
   }
-  success{
-    sh("echo succsessfull")
-  }
 }
