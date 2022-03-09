@@ -7,6 +7,8 @@ pipeline  {
     stage("build"){
       steps{
         sh("pwd")
+        sh("npm install")
+        sh("npx cypress run")
         echo "build is completed"
       }
     }
