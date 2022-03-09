@@ -1,5 +1,7 @@
 pipeline  {
-  agent any
+  agent {
+      docker { image 'node:16.13.1-alpine' }
+  }
   parameters {
     booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
   }
@@ -9,7 +11,7 @@ pipeline  {
     stage("build"){
       steps{
         sh("pwd")
-        sh("docker run --name node -p 3000:3000")
+        sh("npm install")
         sh("npx cypress run")
         echo "build is completed"
       }
