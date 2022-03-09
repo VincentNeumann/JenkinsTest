@@ -20,7 +20,7 @@ pipeline  {
     }
     stage("deploy"){
       steps{
-        pwd
+        
         echo "succesful deployed"
       }
     }
