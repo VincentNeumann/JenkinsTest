@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "test": "cypress run --spec cypress/integration/myTests/*spec.js"
+  },
   "devDependencies": {
     "cypress": "^9.5.1"
   }
