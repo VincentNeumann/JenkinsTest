@@ -1,7 +1,9 @@
 pipeline  {
   agent any
-  parameters {
-    booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
+  
+  tools {
+    nodejs "nodejs"
+    dockerTool "docker"
   }
 
   stages{
