@@ -23,7 +23,8 @@ pipeline  {
     stage("build"){
       steps{
         sh("pwd")
-        sh("npm install cypress" )
+        sh("npm install" )
+        
         sh("npm run test")
         echo "build is completed"
       }
