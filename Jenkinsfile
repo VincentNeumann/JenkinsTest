@@ -1,24 +1,25 @@
 pipeline  {
-    agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:10'
-    }
-  }
+  agent any
+  //   agent {
+  //   // this image provides everything needed to run Cypress
+  //   docker {
+  //     image 'cypress/base:10'
+  //   }
+  // }
   
   tools {
-    nodejs "nodejs"
+    // nodejs "nodejs"
     dockerTool "docker"
   }
 
   stages{
 
-    stage("Initialize"){
-      steps{
-          def dockerHome = tool 'docker'
-          env.PATH = "${dockerHome}/bin:${env.PATH}"
-      }
-    }
+    // stage("Initialize"){
+    //   steps{
+    //       def dockerHome = tool 'docker'
+    //       env.PATH = "${dockerHome}/bin:${env.PATH}"
+    //   }
+    // }
     stage("build"){
       steps{
         sh("pwd")
@@ -29,9 +30,6 @@ pipeline  {
     }
     stage("test"){
       steps{
-        sh("cd scripts")
-        sh("pwd")
-
         echo "tests are completed"
       }
     }
