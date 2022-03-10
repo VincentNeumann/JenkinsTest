@@ -14,6 +14,7 @@ pipeline  {
       steps{
         sh("pwd")
         sh("npm install")
+        sh("systemctl start docker")
         sh("docker run node:16-alpine")
         echo "build is completed"
       }
