@@ -1,7 +1,5 @@
 pipeline  {
-  agent {
-      docker { image 'node:16-alpine' }
-  }
+  agent any
   parameters {
     booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
   }
@@ -16,6 +14,7 @@ pipeline  {
       steps{
         sh("pwd")
         sh("npm install")
+        sh("docker run node:16-alpine")
         echo "build is completed"
       }
     }
