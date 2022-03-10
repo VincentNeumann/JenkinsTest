@@ -8,7 +8,7 @@ pipeline  {
   // }
   
   tools {
-    // nodejs "nodejs"
+    nodejs "nodejs"
     dockerTool "docker"
   }
 
