@@ -23,7 +23,7 @@ pipeline  {
     stage("build"){
       steps{
         sh("pwd")
-        sh("npm install cypress" )
+        // sh("npm install cypress" )
         sh("ls .")
         sh("npm cache add .")
         sh("CYPRESS_CACHE_FOLDER=/var/jenkins_home/.cache/Cypress")
