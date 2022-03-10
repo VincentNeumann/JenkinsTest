@@ -25,7 +25,7 @@ pipeline  {
         sh("pwd")
         sh("ls .")
         sh("npm install cypress")
-        sh("./node_modules/.bin/cypress run --spec cypress/integration/myTests/*spec.js ")
+        sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
         echo "build is completed"
       }
     }
