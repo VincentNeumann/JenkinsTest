@@ -12,7 +12,7 @@ pipeline  {
       steps{
         sh("pwd")
         sh("npm install")
-        sh("sudo dockerd")
+        sh("docker -v")
         sh("docker run node:16-alpine")
         echo "build is completed"
       }
