@@ -1,8 +1,6 @@
 pipeline  {
   agent any
-  parameters {
-    booleanParam(name: 'executeUITests', defaultValue: true, description: '' )
-  }
+  
   tools {
     nodejs "nodejs"
     dockerTool "docker"
@@ -14,7 +12,7 @@ pipeline  {
       steps{
         sh("pwd")
         sh("npm install")
-        sh("systemctl start docker")
+        sh("sudo dockerd")
         sh("docker run node:16-alpine")
         echo "build is completed"
       }
