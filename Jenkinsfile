@@ -24,7 +24,7 @@ pipeline  {
       steps{
         sh("pwd")
         sh("npm install cypress" )
-        sh("CYPRESS_CACHE_FOLDER=./tmp/Cypress npm install")
+        sh("CYPRESS_CACHE_FOLDER=/var/jenkins_home/.cache/Cypress")
         sh("npm run test")
         echo "build is completed"
       }
