@@ -24,7 +24,7 @@ pipeline  {
       steps{
         
         sh("ls .")
-        sh('chown -R 501:20 "/.npm"')
+        // sh('chown -R 501:20 "/.npm"')
         sh("npm install cypress")
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
         echo "build is completed"
