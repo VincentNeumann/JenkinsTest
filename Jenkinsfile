@@ -1,8 +1,4 @@
 pipeline  {
-  tools {
-    nodejs "nodejs"
-    dockerTool "docker"
-  }
   // agent any
     agent {
     // this image provides everything needed to run Cypress
@@ -11,6 +7,10 @@ pipeline  {
     }
   }
 
+  tools {
+    nodejs "nodejs"
+    dockerTool "docker"
+  }
   stages{
 
     // stage("Initialize"){
