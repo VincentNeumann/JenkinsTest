@@ -1,11 +1,11 @@
 pipeline  {
-  // agent any
-    agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:10'
-    }
-  }
+  agent any
+  //   agent {
+  //   // this image provides everything needed to run Cypress
+  //   docker {
+  //     image 'cypress/base:10'
+  //   }
+  // }
 
   tools {
     nodejs "nodejs"
@@ -21,7 +21,7 @@ pipeline  {
     // }
     stage("build"){
       steps{
-        sh("pwd")
+        sh("docker run cypress/base:10")
         sh("ls .")
         sh("npm install cypress")
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
