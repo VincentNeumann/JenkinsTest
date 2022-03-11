@@ -3,7 +3,8 @@ pipeline  {
     agent {
     // this image provides everything needed to run Cypress
     docker {
-      image 'cypress/base:10'
+      // image 'cypress/base:10'
+      image 'alpine:latest'
     }
   }
 
@@ -21,7 +22,7 @@ pipeline  {
     // }
     stage("build"){
       steps{
-        sh("docker run cypress/base:10")
+        
         sh("ls .")
         sh("npm install cypress")
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
