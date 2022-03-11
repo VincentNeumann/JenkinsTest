@@ -4,6 +4,7 @@ pipeline  {
     // this image provides everything needed to run Cypress
     docker {
       image 'cypress/base:latest'
+      args '--user=root --workdir=/mnt/cypress'
       // image 'alpine:latest'
     }
   }
