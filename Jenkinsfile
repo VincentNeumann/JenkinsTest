@@ -1,5 +1,6 @@
 def container = "cypressContainer"
 def containerDirectory = "cypressContainer"
+def scriptDir = getClass().protectionDomain.codeSource.location.path
 
 pipeline  {
   agent any
@@ -29,8 +30,8 @@ pipeline  {
     stage("build"){
       steps{
         // sh("docker rm ${container}")
-        sh("CURRENTDIR=$PWD")
-        sh("docker run --name ${container} -it -v ${PWD}:/e2e -w /e2e cypress/included:3.2.0")
+        sh("pwd")
+        sh("docker run --name ${container} -it -v ${scriptDir}:/e2e -w /e2e cypress/included:3.2.0")
         sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
