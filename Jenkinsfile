@@ -29,7 +29,7 @@ pipeline  {
     stage("build"){
       steps{
         // sh("docker rm ${container}")
-        sh("pwd")
+        sh("CURRENTDIR=$PWD")
         sh("docker run --name ${container} -it -v ${PWD}:/e2e -w /e2e cypress/included:3.2.0")
         sh("docker exec ${container} NO_COLOR=1 ")
 
