@@ -29,8 +29,11 @@ pipeline  {
     stage("build"){
       steps{
         sh("docker rm ${container}")
-        sh("docker run --name ${container} cypress/base:latest")
-        sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
+        sh("docker run --name ${container} -it -v $PWD:/e2e -w /e2e cypress/included:3.2.0")
+        sh("docker exec ${container} NO_COLOR=1 ")
+
+        // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
+        sh("docker exec ${container} /e2e/node_modules/.bin/cypress run --spec cypress/integration/*spec.js")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
