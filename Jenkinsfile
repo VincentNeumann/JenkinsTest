@@ -1,4 +1,5 @@
 def container = "cypressContainer"
+def containerDirectory = "cypressContainer"
 
 pipeline  {
   agent any
@@ -28,7 +29,7 @@ pipeline  {
     stage("build"){
       steps{
         sh("docker run --name ${container} cypress/base:latest")
-        sh("docker cp ./cypress ${container}:~/cypress")
+        sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
