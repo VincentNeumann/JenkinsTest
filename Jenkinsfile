@@ -28,6 +28,7 @@ pipeline  {
     // }
     stage("build"){
       steps{
+        sh("docker rm ${container}")
         sh("docker run --name ${container} cypress/base:latest")
         sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
         sh("ls .")
@@ -35,6 +36,8 @@ pipeline  {
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
         sh("NO_COLOR=1")
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
+
+        sh("docker rm ${container}")
         echo "build is completed"
       }
     }
