@@ -1,3 +1,5 @@
+def container = "cypressContainer"
+
 pipeline  {
   agent any
   //   agent {
@@ -14,7 +16,6 @@ pipeline  {
     dockerTool "docker"
   }
 
-  def container = "cypressContainer"
 
   stages{
 
