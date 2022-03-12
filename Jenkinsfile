@@ -32,7 +32,7 @@ pipeline  {
         sh("pwd")
         //pwd has to be injected in command below
         // sh("docker run --name ${container} -v /Users/br/.jenkins/workspace/CypressTest_master:/e2e -w /e2e cypress/included:3.2.0")
-        sh("docker run --name ${container} --entrypoint /cypress cypress/base:latest")
+        sh("docker run --name ${container} --entrypoint / cypress/base:latest")
         sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
