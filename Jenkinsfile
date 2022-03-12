@@ -1,6 +1,5 @@
 def container = "cypressContainer"
 def containerDirectory = "cypressContainer"
-def scriptDir = $PWD
 
 pipeline  {
   agent any
@@ -31,7 +30,8 @@ pipeline  {
       steps{
         // sh("docker rm ${container}")
         sh("pwd")
-        sh("docker run --name ${container} -it -v ${scriptDir}:/e2e -w /e2e cypress/included:3.2.0")
+        //pwd has to be injected in command below
+        sh("docker run --name ${container} -it -v /Users/br/.jenkins/workspace/CypressTest_master:/e2e -w /e2e cypress/included:3.2.0")
         sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
