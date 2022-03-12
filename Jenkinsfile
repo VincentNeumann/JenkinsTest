@@ -1,6 +1,6 @@
 def container = "cypressContainer"
 def containerDirectory = "cypressContainer"
-def scriptDir = getClass().protectionDomain.codeSource.location.path
+def scriptDir = System.getProperty("user.dir");
 
 pipeline  {
   agent any
