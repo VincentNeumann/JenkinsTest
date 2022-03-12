@@ -28,7 +28,7 @@ pipeline  {
     stage("build"){
       steps{
         sh("docker run cypress/base:latest")
-        sh("docker cp ./cypress ")
+        sh("docker cp ./cypress ./${container}/cypress")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
