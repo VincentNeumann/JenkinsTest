@@ -1,6 +1,6 @@
 def container = "cypressContainer"
 def containerDirectory = "cypressContainer"
-def scriptDir = System.getProperty("user.dir");
+def scriptDir = $PWD
 
 pipeline  {
   agent any
