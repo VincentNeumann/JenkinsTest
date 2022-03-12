@@ -27,7 +27,7 @@ pipeline  {
     // }
     stage("build"){
       steps{
-        sh("docker run cypress/base:latest")
+        sh("docker run cypress/base:latest --name ${container}")
         sh("docker cp ./cypress ${container}:~/cypress")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
