@@ -1,18 +1,21 @@
 pipeline  {
-  // agent any
-    agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:latest'
-      args '--user=root --workdir=/mnt/cypress'
-      // image 'alpine:latest'
-    }
-  }
+  agent any
+  //   agent {
+  //   // this image provides everything needed to run Cypress
+  //   docker {
+  //     image 'cypress/base:latest'
+  //     args '--user=root --workdir=/mnt/cypress'
+  //     // image 'alpine:latest'
+  //   }
+  // }
 
   tools {
     nodejs "nodejs"
     dockerTool "docker"
   }
+
+  def container = "cypressContainer"
+
   stages{
 
     // stage("Initialize"){
@@ -23,11 +26,12 @@ pipeline  {
     // }
     stage("build"){
       steps{
-        
+        sh("docker run cypress/base:latest")
+        sh("docker cp ./cypress ")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
-        // sh("npm install --cache /tmp/empty-cache")
-        sh("npm info cypress")
+        sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
+        sh("NO_COLOR=1")
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
         echo "build is completed"
       }
