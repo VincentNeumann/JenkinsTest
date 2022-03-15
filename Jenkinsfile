@@ -28,7 +28,7 @@ pipeline  {
     // }
     stage("build"){
       steps{
-        sh("systemctl restart docker")
+        sh("docker restart -t 1")
          sh("docker rm ${container}")
         sh("pwd")
         //pwd has to be injected in command below
