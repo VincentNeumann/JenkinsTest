@@ -4,4 +4,5 @@ RUN mkdir -p /home/app
 
 COPY . /home/app
 
-CMD ["npm run", "test"]
+CMD NO_COLOR=1
+CMD ["npm", "run", "test"] 
