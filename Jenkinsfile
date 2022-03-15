@@ -34,7 +34,7 @@ pipeline  {
         // sh("docker run --name ${container} -v /Users/br/.jenkins/workspace/CypressTest_master:/e2e -w /e2e cypress/included:3.2.0")
         // sh("docker run --name ${container}  -v /Users/br/.jenkins/workspace/CypressTest_master:/e2e -w /e2e cypress/included:3.2.0")
         // sh("docker run --name ${container} cypress/base:latest")
-        sh("docker build -t myContainer .")
+        sh("docker build -t mycontainer .")
         sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
