@@ -42,11 +42,11 @@ pipeline  {
         // sh("docker exec ${container} npm run test")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
-        //sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
+        sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
         // sh("NO_COLOR=1")
-        // sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
+        sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
 
-        // sh("docker rm ${container}")
+        sh("docker rm ${container}")
         echo "build is completed"
       }
     }
