@@ -39,7 +39,7 @@ pipeline  {
         // sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
-        // sh("docker exec ${container} npm run test")
+        sh("docker exec ${container} npm run test")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
