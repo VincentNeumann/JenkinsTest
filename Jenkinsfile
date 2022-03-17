@@ -36,15 +36,15 @@ pipeline  {
         // sh("docker run --name ${container} cypress/base:latest")
         sh("docker build -t ${container} .")
         sh("docker run ${container}")
-        sh("docker exec ${container} NO_COLOR=1 ")
+        // sh("docker exec ${container} NO_COLOR=1 ")
 
         // sh("docker cp ./cypress ${container}:${containerDirectory}/cypress")
-        sh("docker exec ${container} npm run test")
+        // sh("docker exec ${container} npm run test")
         sh("ls .")
         // sh('chown -R 501:20 "/.npm"')
         sh("npm install --cache /tmp/empty-cache") // this is sort of a hack
-        sh("NO_COLOR=1")
-        sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
+        // sh("NO_COLOR=1")
+        // sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
 
         sh("docker rm ${container}")
         echo "build is completed"
