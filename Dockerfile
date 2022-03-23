@@ -11,4 +11,4 @@ CMD /bin/sh -c "NO_COLOR=1"
 # CMD ["npm","--prefix /home/app", "run", "test", ]
 # CMD /bin/sh -c "sh -l"
 
-ENTRYPOINT [ "npm", "--prefix /home/app", "run", "test" ]
+ENTRYPOINT [ "npm", "--prefix", "/home/app", "run", "test" ]
