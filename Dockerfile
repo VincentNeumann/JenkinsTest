@@ -1,4 +1,4 @@
-FROM node:13-alpine
+FROM cypress/included:3.2.0
 
 RUN mkdir -p /home/app
 
