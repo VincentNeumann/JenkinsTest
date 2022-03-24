@@ -12,4 +12,4 @@ CMD /bin/sh -c "cd /home/app && npm cache clean --force && rm -rf node_modules &
 # CMD /bin/sh -c "sh -l"
 
 # ENTRYPOINT [ "npm", "--prefix", "/home/app", "test" ]
-ENTRYPOINT [ "cypress run --spec /home/app/cypress/integration/*spec.js" ]
+ENTRYPOINT [ "cypress run --spec /home/app/cypress/integration/sample_spec.js" ]
