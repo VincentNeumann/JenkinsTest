@@ -11,5 +11,5 @@ CMD /bin/sh -c "cd /home/app && npm cache clean --force && rm -rf node_modules &
 # CMD ["npm","--prefix /home/app", "run", "test", ]
 # CMD /bin/sh -c "sh -l"
 
-# ENTRYPOINT [ "npm", "--prefix", "/home/app", "run", "test" ]
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT [ "npm", "--prefix", "/home/app", "test" ]
+# ENTRYPOINT [ "/bin/sh" ]
