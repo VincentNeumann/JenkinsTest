@@ -7,7 +7,7 @@ COPY . /home/app
 # CMD NO_COLOR=1
 # CMD /bin/sh -c "cd /home/app && rm node_modules"
 # CMD /bin/sh -c "cd /home/app && npm install --cache /tmp/empty-cache"
-CMD /bin/sh -c "cd /home/app && npm cache clean --force && rm -rf node_modules && npm install --cache /tmp/empty-cache"
+CMD /bin/sh -c "cd /home/app && npm cache clean --force && rm -rf node_modules && npm cache clear --force  && npm install --no-cache"
 # CMD ["npm","--prefix /home/app", "run", "test", ]
 # CMD /bin/sh -c "sh -l"
 
