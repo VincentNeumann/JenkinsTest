@@ -2,15 +2,15 @@ def container = "cypresscontainer"
 def containerDirectory = "cypressContainer"
 
 pipeline  {
-  // agent any
-    agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:latest'
-      args '--user=root --workdir=/mnt/cypress'
-      // image 'alpine:latest'
-    }
-  }
+   agent any
+  //   agent {
+  //   // this image provides everything needed to run Cypress
+  //   docker {
+  //     image 'cypress/base:latest'
+  //     args '--user=root --workdir=/mnt/cypress'
+  //     // image 'alpine:latest'
+  //   }
+  // }
 
   // tools {
   //   nodejs "nodejs"
