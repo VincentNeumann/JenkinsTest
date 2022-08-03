@@ -49,7 +49,7 @@ pipeline  {
         sh("./node_modules/.bin/cypress run --spec cypress/integration/*spec.js ")
 
         sh("docker rm ${container}")
-        echo "build is completed!!!!!!!"
+        echo "build is completed!!!!!!!!"
       }
     }
     stage("test"){
