@@ -12,10 +12,10 @@ pipeline  {
     }
   }
 
-  tools {
-    nodejs "nodejs"
-    dockerTool "docker"
-  }
+  // tools {
+  //   nodejs "nodejs"
+  //   dockerTool "docker"
+  // }
 
 
   stages{
